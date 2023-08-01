@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+            
+    {% for i in product  %}
+        
+               <div class="box">
+                   <img src="{{ i.image.url }}" alt="html">
+                   <h3>{{ i.title}}</h3>
+                   <p><span>Narxi:</span>{{ i.price }}</p>
+                   <form method='GET'  action='/add_basket'>
+                    {% csrf_token %}
+                    <input type='hidden' name='user_id' value='{{user.id}}' id='user_id'>
+                    <input type='hidden' name='id' value='{{i.id}}' id='id'>
+                    <button id="box-btn"  class="btn" style='color:white' >
+                        
+                            <i style='color:blue'></i>savatga qo'shish
+                        
+                    </button>
+                </form>
+               </div>
+        
+    {% endfor%}
+    
+    </div>
+</div>
+{% endblock %}

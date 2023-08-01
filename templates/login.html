@@ -1,0 +1,28 @@
+
+
+<form action=""  method='POST'>
+    {% csrf_token %}
+    
+
+    <h2>LOGIN</h2>
+     <div >
+        <label for="">Username</label><br>
+        <input type="text" id='username'  name='username' required>
+        
+    </div>
+
+    <div >
+        <label for=""> Password</label><br>
+        <input type="password" id='password' name='password' required>
+        
+    </div>      
+   
+    <div >
+        
+        <button type="submit">KIRISH</button>
+        <a href='/register/' >
+        <p style='color:blue; position:relative; top:10px;'>register</p>
+        </a>
+    </div>
+    
+</form>

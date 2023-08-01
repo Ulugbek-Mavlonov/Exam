@@ -1,0 +1,33 @@
+<div>
+    <div >
+    <h1 >{{ user.username}} bizning do'konga xush kelibsiz</h1>
+
+    <form method='GET'  action='/index/'>
+        {% csrf_token %}
+        
+        <input type='hidden' name='user_id' value='{{user.id}}' id='user_id'>
+        <button >
+            <span >HOME</span>
+        </button>   
+    </form>
+    <form method='GET'  action='/basket/'>
+        {% csrf_token %}
+        
+        <input type='hidden' name='user_id' value='{{user.id}}' id='user_id'>
+        <button>
+            <span >BASKET</span>
+        </button>   
+    </form>
+    <a href="/history/{{user.id}}/">        
+        <button>
+        <span class="nav-item">Historis</span>
+        </button>
+    </a>
+</div><br>
+
+
+</div>
+{% block content %}
+
+{% endblock content %}
+

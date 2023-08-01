@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+        
+    <div style='backgroundcolor:blue'><h1 >Sizning savatchangiz</h1>
+        <div >
+            <h1>JAMI {{ price }}$</h1>
+        </div>
+        <button>
+            <a href='/order/{{user.id}}/'>Xarid qlish</a>
+        </button>
+    </div><br>
+        
+    <div >
+        
+        {% for i in product %} 
+            {% for r in rey %}
+            {% if r.id == i.number %}
+                <div class="box">
+                    <img src="{{ r.image.url }}" style='with:50px; height:50px ' alt="html">
+                    <h3>{{ r.title}}</h3>
+                    <p><span>Narxi:</span>{{ r.price }}</p>
+                    <a id="box-btn" href="/delete/{{i.id}}/"  > <span>olib tashlash</span></a>
+                </div><br>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        
+        </div>
+    </div><br>
+    
+</div>
+{% endblock %}

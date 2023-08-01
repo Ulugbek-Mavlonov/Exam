@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/search/" method='GET'>
+    {% csrf_token %}
+<input placeholder="search.." class="input" name="title" type="text">
+
+</form>
+
+
+
+<span >Basket</span>
+
+    <div >
+        {% for i in rey %}
+        <div style='border:1px solid red; with:20%; height:200px '>
+            
+            <a  href="/detail/{{i.id}}/"  > 
+                <span><img src="{{ i.image.url }}" alt="html" style='with:50px; height:50px '></span>
+            </a>
+            <h3>{{ i.title }}</h3>
+            <p><span>Narxi:</span>{{ i.price }} $</p>
+            <p> - </p>
+            <form method='GET'  action='/add_basket'>
+                {% csrf_token %}
+                <input type='hidden' name='user_id' value='{{user.id}}' id='user_id'>
+                <input type='hidden' name='id' value='{{i.id}}' id='id'>
+                <button   style='color:blue' >
+                    
+                        savatga qo'shish
+                    
+                </button>
+            </form>
+            
+        </div><br>
+        {% endfor %}
+        
+    </div>
+    {% endblock content %}

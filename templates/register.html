@@ -1,0 +1,30 @@
+<form action=""  method='POST'>
+    {% csrf_token %}
+    
+
+    <h2>Registration</h2>
+     <div ><label for="">Username</label><br>
+        <input type="text" id='username'  name='username' required>
+        
+    </div>
+
+    <div >
+        <label for=""> Password</label><br>
+        <input type="password" id='password1' name='password1' required>
+        
+    </div>      
+    <div>
+        <label for="" >Confirmation</label><br>
+        <input type="password" id='password2' name='password2' required>
+                 
+    </div> 
+    
+    <div >
+        <br>
+        <button type="submit">Registration</button>
+        <a href='/' >
+            <p style='color:blue'>login</p>
+        </a>
+        
+    </div>
+</form>

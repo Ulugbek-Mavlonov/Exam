@@ -1,0 +1,28 @@
+{% block content %}
+<body>
+    <div >
+        <div >
+            <form action=""  method='POST'>
+                {% csrf_token %}
+                 <div >
+                    <input type="text" id=''  name='first_name' required>
+                    <label for="">First name</label>
+                </div>       
+                <div>
+                    <input type="text" id='' name='phone' required>
+                    <label for="">Phone </label>
+                </div>                                                             
+                <div >
+                    <input type="email" id='' name='email' required>
+                    <label for="" >Email</label>         
+                </div> 
+                <div >                    
+                    <button type="submit">Sotib Olish</button>                   
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+{% endblock %}
+</html>

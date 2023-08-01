@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+        
+        
+    <h1>Xaridlar tarixingiz</h1>
+        <div >
+        
+            {% for i in rey  %}
+                {% for r in num %}
+                    {% if i.title == r.book.title %}
+                       <div class="box">
+                           <img src="{{ i.image.url }}" alt="html" style='with:50px; height:50px '>
+                           <h3>{{ r.title}}</h3>
+                           <p><span>xaridlar:</span>{{ r.quantity }} ta</p>
+                           <a id="box-btn"   class="btn"> <span>{{ r.order_date }}</span></a>
+                       </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor%}       
+        </div>
+</div>
+{% endblock %}
