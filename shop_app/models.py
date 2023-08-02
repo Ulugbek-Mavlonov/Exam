@@ -3,10 +3,13 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
+# class Category(models.Model):
+#     name = models.CharField(max_length=50)
 
 # mahsulotlarni saqlovchi model
 class Product(models.Model):
     id = models.AutoField(primary_key=True)
+    # category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)

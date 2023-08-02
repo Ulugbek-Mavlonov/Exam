@@ -33,6 +33,10 @@ def register(request):
         
     return render(request, 'register.html', context)
 
+# chiqib ketish
+def logout(request):
+    return render(request, 'login.html', name='logout')
+
 # asosiy sahifada mahsulotlarni chiqarish
 
 def index(request):
@@ -85,7 +89,6 @@ def basket(request):
         for l in rey:
             if i.number == l.id :
                 price +=l.price
-                print(product)
     return render(request, 'basket.html', {'product':product, 'rey':rey, 'price':price})
 
 

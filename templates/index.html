@@ -19,7 +19,7 @@
             </a>
             <h3>{{ i.title }}</h3>
             <p><span>Narxi:</span>{{ i.price }} $</p>
-            <p> - </p>
+            {% comment %} <p> -  </p> {% endcomment %}
             <form method='GET'  action='/add_basket'>
                 {% csrf_token %}
                 <input type='hidden' name='user_id' value='{{user.id}}' id='user_id'>
